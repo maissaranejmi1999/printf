@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				i += _int(args);
 			} else if (*(p + 1) == '%')
 			{
-				write(1,'%',1);
+				write(1,"%",1);
 				i++;
 			}
 			p++;
