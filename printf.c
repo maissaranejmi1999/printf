@@ -37,11 +37,11 @@ int _printf(const char *format, ...)
 			if (*(p + 1) == 'n')
 			{
 				write(1, "\n", 1);
+				p++;
 			} else
 			{
 				write(1, "\\" 1);
 			}
-			p++;
 		} else
 		{
 			write(1,&(*p),1);
