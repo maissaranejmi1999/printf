@@ -29,13 +29,13 @@ int _int(va_list args)
 			i = i / 10;
 			l++;
 		}
-		digit = malloc((l + 1) * sizeof(int));
-		for (x = 0; x < (l + 1); x++)
+		digit = malloc(l * sizeof(int));
+		for (x = 0; x < l; x++)
 		{
 			digit[x] = j % 10;
 			j = j / 10;
 		}
-		for (x = l; x >= 0 ; x--)
+		for (x = (l - 1); x >= 0 ; x--)
 		{
 			putchar(digit[x] + '0');
 			len++;
