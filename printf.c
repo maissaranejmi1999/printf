@@ -29,7 +29,6 @@ int _printf(const char *format, ...)
 			} else if (*(p + 1) == '%')
 			{
 				write(1,"%",1);
-				i++;
 			}
 			p++;
 		} else if (*p == '\\')
