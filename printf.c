@@ -13,6 +13,11 @@ int _printf(const char *format, ...)
 	const char *p;
 
 	va_start(args, format);
+	if (format == NULL)
+	{
+		write(1, "Error\n", 7);
+		return (-1);
+	}
 	for (p = format; *p != '\0'; p++)
 	{
 		if (*p == '%')
