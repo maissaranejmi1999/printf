@@ -32,6 +32,10 @@ int _int(va_list args)
 			l++;
 		}
 		digit = malloc(l * sizeof(int));
+		if (digit == NULL)
+		{
+			return -1;
+		}
 		for (x = 0; x < l; x++)
 		{
 			digit[x] = j % 10;
