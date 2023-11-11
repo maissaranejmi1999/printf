@@ -9,7 +9,7 @@
 int _int(va_list args)
 {
 	int i = va_arg(args, int);
-	int x = 0, len = 0, l = 0, j, m;
+	int x = 0, len = 0, l = 0, j;
 	int *digit;
 
 	if (i < 0)
@@ -30,14 +30,14 @@ int _int(va_list args)
 			l++;
 		}
 		digit = malloc(l * sizeof(int));
-		for (m = 0; m < l; m++)
+		for (x = 0; x < l; x++)
 		{
-			digit[m] = j % 10;
+			digit[x] = j % 10;
 			j = j / 10;
 		}
-		for (m = (l - 1); m >= 0 ; m--)
+		for (x = (l - 1); x >= 0 ; x--)
 		{
-			putchar(digit[m] + '0');
+			putchar(digit[x] + '0');
 			len++;
 		}
 	}
