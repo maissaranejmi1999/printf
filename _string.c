@@ -15,12 +15,17 @@ int _string(va_list args)
 	{
 		write(1, "(null)", 6);
 		len += 6;
-	} else
-	{
+	} else {
 		for (i = 0; s[i]; i++)
 		{
-			write(1, &s[i], 1);
-			len++;
+			if (s[i] == '\0')
+			{
+				write(1, "\\0", 2);
+				len += 2;
+			} else {
+				write(1, &s[i], 1);
+				len++;
+			}
 		}
 	}
 	return (len);
