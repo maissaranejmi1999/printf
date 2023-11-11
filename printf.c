@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 				write(1, &newline, 1);
 			} else
 			{
-				write(1, "\ ", 1);
+				write(1, '\', 1);
 			}
 			p++;
 		} else
