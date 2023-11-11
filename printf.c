@@ -29,6 +29,7 @@ int _printf(const char *format, ...)
 			} else if (*(p + 1) == '%')
 			{
 				write(1, "%", 1);
+				i++;
 			}
 			p++;
 		} else if (*p == '\\')
@@ -40,10 +41,12 @@ int _printf(const char *format, ...)
 			} else
 			{
 				write(1, "\\", 1);
+				i++;
 			}
 		} else
 		{
 			write(1, &(*p), 1);
+			i++;
 		}
 	}
 	va_end(args);
