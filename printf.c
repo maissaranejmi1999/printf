@@ -50,5 +50,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
+	write(1, "\n", 1);
 	return (i);
 }
