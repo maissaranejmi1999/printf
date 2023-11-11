@@ -11,13 +11,16 @@ int _string(va_list args)
 	char *s = va_arg(args, char *);
 	int i, len = 0;
 
-	if (s == NULL) {
+	if (s == NULL)
+	{
 		s = "(null)";
 		for (i = 0; s[i]; i++)
 		{
 			_putchar(s[i]);
+			len++;
 		}
-	} else {
+	} else
+	{
 		len = 0;
 		for (i = 0; s[i]; i++)
 		{
@@ -25,5 +28,5 @@ int _string(va_list args)
 			len++;
 		}
 	}
-	return len;
+	return (len);
 }
