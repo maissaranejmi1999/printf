@@ -9,7 +9,7 @@
 int _int(va_list args)
 {
 	int i = va_arg(args, int);
-	int x = 0, l = 0, j = 0, len = 0;
+	int x = 0, l = 0, j = 0, len = 0, M = 0;
 	int *digit;
 	char digitChar;
 
@@ -19,7 +19,7 @@ int _int(va_list args)
 		return (10);
 	} else if (i == INT_MIN)
 	{
-		write(1, "-2147483647", 10);
+		write(1, "-2147483648", 11);
 		return (11);
 	}
 	if (i < 0)
@@ -39,7 +39,7 @@ int _int(va_list args)
 		j = j / 10;
 		l++;
 	}
-	digit = malloc(l * sizeof(int));
+	digit = malloc((l + 1) * sizeof(int));
 	if (digit == NULL)
 	{
 		return (-1);
@@ -49,7 +49,7 @@ int _int(va_list args)
 		digit[x] = i % 10;
 		i = i / 10;
 	}
-	for (x = (l - 1); x >= 0 ; x--)
+	for (M = (l - 1); M >= 0 ; M--)
 	{
 		digitChar = digit[x] + '0';
 		write(1, &digitChar, 1);
