@@ -47,5 +47,6 @@ int _int(va_list args)
 		len++;
 	}
 	free(digit);
+	va_end(args);
 	return (len);
 }
