@@ -35,11 +35,10 @@ int _int(va_list args)
 	{
 		return -1;
 	}
-	j = i;
 	for (x = 0; x < l; x++)
 	{
-		digit[x] = j % 10;
-		j = j / 10;
+		digit[x] = i % 10;
+		i = i / 10;
 	}
 	for (x = (l - 1); x >= 0 ; x--)
 	{
