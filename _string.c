@@ -18,14 +18,8 @@ int _string(va_list args)
 	} else {
 		for (i = 0; s[i]; i++)
 		{
-			if (s[i] == '\0')
-			{
-				write(1, "\\0", 2);
-				len += 2;
-			} else {
-				write(1, &s[i], 1);
-				len++;
-			}
+			write(1, &s[i], 1);
+			len++;
 		}
 	}
 	return (len);
