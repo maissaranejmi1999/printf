@@ -16,14 +16,14 @@ int _string(va_list args)
 		s = "(null)";
 		for (i = 0; s[i]; i++)
 		{
-			_putchar(s[i]);
+			write(1, &s[i], 1);
 			len++;
 		}
 	} else
 	{
 		for (i = 0; s[i]; i++)
 		{
-			_putchar(s[i]);
+			write(1, &s[i], 1);
 			len++;
 		}
 	}
