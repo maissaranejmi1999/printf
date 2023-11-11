@@ -28,13 +28,13 @@ int _printf(const char *format, ...)
 				i += _int(args);
 			} else if (*(p + 1) == '%')
 			{
-				_putchar('%');
+				write(1,'%',1);
 				i++;
 			}
 			p++;
 		} else
 		{
-			_putchar(*p);
+			write(1,p,1);
 			i++;
 		}
 	}
