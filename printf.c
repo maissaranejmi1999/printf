@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0;
 	const char *p;
+	char newline;
 
 	va_start(args, format);
 	for (p = format; *p != '\0'; p++)
