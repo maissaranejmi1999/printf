@@ -17,6 +17,10 @@ int _int(va_list args)
 	{
 		write(1, "2147483647", 10);
 		return (10);
+	} else if (i == INT_MIN)
+	{
+		write(1, "-2147483647", 10);
+		return (11);
 	}
 	if (i < 0)
 	{
