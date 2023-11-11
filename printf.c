@@ -11,7 +11,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0;
 	const char *p;
-	char newline = '\n';
 
 	va_start(args, format);
 	for (p = format; *p != '\0'; p++)
@@ -33,14 +32,14 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			p++;
-		} else if (*p == '\')
+		} else if (*p == '\\')
 		{
 			if (*(p + 1) == 'n')
 			{
-				write(1, &newline, 1);
+				write(1, "\n", 1);
 			} else
 			{
-				write(1, "\ " 1);
+				write(1, "\\" 1);
 			}
 			p++;
 		} else
