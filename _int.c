@@ -6,7 +6,7 @@
  * Return: len
 */
 
-int _int(va_list args)
+void _int(va_list args)
 {
 	int i = va_arg(args, int);
 	int x = 0, l = 0, j;
