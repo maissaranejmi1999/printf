@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 				i++;
 			} else
 			{
+				va_end(args);
 				return (-1);
 			}
 			p++;
@@ -50,6 +51,7 @@ int _printf(const char *format, ...)
 				i++;
 			} else
 			{
+				va_end(args);
 				return (-1);
 			}
 			p++;
