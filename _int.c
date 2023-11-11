@@ -9,7 +9,7 @@
 int _int(va_list args)
 {
 	int i = va_arg(args, int);
-	int x = 0, len = 0, l = 0, j, m = 0;
+	int x = 0, len = 0, l = 0, j, m;
 	int *digit;
 
 	if (i < 0)
