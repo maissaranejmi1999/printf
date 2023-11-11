@@ -6,10 +6,10 @@
  * Return: len
 */
 
-void _int(va_list args)
+int _int(va_list args)
 {
 	int i = va_arg(args, int);
-	int x = 0, l = 0, j;
+	int x = 0, l = 0, j, len = 0;
 	int *digit;
 
 	if (i < 0)
@@ -19,6 +19,7 @@ void _int(va_list args)
 	} else if (i == 0)
 	{
 		putchar('0');
+		return(1);
 	} else if (i > 0)
 	{
 		j = i;
@@ -37,7 +38,9 @@ void _int(va_list args)
 		for (x = (l - 1); x >= 0 ; x--)
 		{
 			putchar(digit[x] + '0');
+			len++;
 		}
 		free(digit);
 	}
+	return (len);
 }
