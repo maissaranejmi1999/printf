@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			p++;
-		} else if (*p == '\\')
+		} else if (*p == '\')
 		{
 			if (*(p + 1) == 'n')
 			{
