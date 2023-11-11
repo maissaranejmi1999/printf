@@ -51,7 +51,7 @@ int _int(va_list args)
 	}
 	for (M = (l - 1); M >= 0 ; M--)
 	{
-		digitChar = digit[x] + '0';
+		digitChar = digit[M] + '0';
 		write(1, &digitChar, 1);
 		len++;
 	}
