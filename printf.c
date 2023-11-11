@@ -33,14 +33,14 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			p++;
-		} else if (*p == '\')
+		} else if (*p == '\\')
 		{
 			if (*(p + 1) == 'n')
 			{
 				write(1, &newline, 1);
 			} else
 			{
-				write(1, '\', 1);
+				write(1, "\\" 1);
 			}
 			p++;
 		} else
