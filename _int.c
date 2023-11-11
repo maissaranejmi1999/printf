@@ -24,10 +24,10 @@ int _int(va_list args)
 		return (1);
 	}
 	j = i;
-	while (i != 0)
+	while (j != 0)
 	{
-		x = i % 10;
-		i = i / 10;
+		x = j % 10;
+		j = j / 10;
 		l++;
 	}
 	digit = malloc(l * sizeof(int));
@@ -35,6 +35,7 @@ int _int(va_list args)
 	{
 		return -1;
 	}
+	j = i;
 	for (x = 0; x < l; x++)
 	{
 		digit[x] = j % 10;
