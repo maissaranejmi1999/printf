@@ -33,7 +33,7 @@ int _int(va_list args)
 	digit = malloc(l * sizeof(int));
 	if (digit == NULL)
 	{
-		return -1;
+		return (-1);
 	}
 	for (x = 0; x < l; x++)
 	{
