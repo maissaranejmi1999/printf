@@ -11,15 +11,16 @@ int _int(va_list args)
 	int i = va_arg(args, int);
 	int x = 0, l = 0, j, len = 0;
 	int *digit;
+	char digitChar;
 
 	if (i < 0)
 	{
-		putchar('-');
+		write(1, "-", 1);
 		i = -i;
 	} else if (i == 0)
 	{
-		putchar('0');
-		return(1);
+		write(1, "0", 1);
+		return (1);
 	} else if (i > 0)
 	{
 		j = i;
@@ -37,7 +38,8 @@ int _int(va_list args)
 		}
 		for (x = (l - 1); x >= 0 ; x--)
 		{
-			putchar(digit[x] + '0');
+			digitChar = digit[x] + '0';
+			write(1, &digitChar, 1);
 			len++;
 		}
 		free(digit);
