@@ -21,6 +21,6 @@ int _string(va_list args)
 			write(1, &s[i], 1);
 			len++;
 		}
-		return (len);
 	}
+	return (len);
 }
