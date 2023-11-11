@@ -17,6 +17,7 @@ int _int(va_list args)
 	{
 		write(1, "-", 1);
 		i = -i;
+		len++;
 	} else if (i == 0)
 	{
 		write(1, "0", 1);
