@@ -13,12 +13,10 @@ int _int(va_list args)
 	int *digit;
 	char digitChar;
 
-	if (i == INT_MAX){
+	if (i == INT_MAX)
+	{
 		write(1, "2147483647", 10);
 		return (10);
-	} else if (i == INT_MIN){
-		write(1, "-2147483648", 11);
-		return (11);
 	}
 	if (i < 0)
 	{
