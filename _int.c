@@ -8,7 +8,6 @@
 
 int _int(va_list args)
 {
-	va_start(args, args);
 	int i = va_arg(args, int);
 	int x = 0, l = 0, j = 0, len = 0;
 	int *digit;
@@ -48,6 +47,5 @@ int _int(va_list args)
 		len++;
 	}
 	free(digit);
-	va_end(args);
 	return (len);
 }
