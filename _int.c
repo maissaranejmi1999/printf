@@ -40,6 +40,7 @@ int _int(va_list args)
 			putchar(digit[x] + '0');
 			len++;
 		}
+		free(digit);
 	}
 	return (len);
 }
