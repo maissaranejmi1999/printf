@@ -40,7 +40,7 @@ int _int(va_list args)
 		digit[x] = j % 10;
 		j = j / 10;
 	}
-	for (x = (l - 1); x > 0 ; x--)
+	for (x = (l - 1); x >= 0 ; x--)
 	{
 		digitChar = digit[x] + '0';
 		write(1, &digitChar, 1);
