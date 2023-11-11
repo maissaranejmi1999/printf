@@ -34,6 +34,9 @@ int _printf(const char *format, ...)
 			{
 				write(1, "%", 1);
 				i++;
+			} else
+			{
+				return (-1);
 			}
 			p++;
 		} else if (*p == '\\')
