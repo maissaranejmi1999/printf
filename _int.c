@@ -30,12 +30,12 @@ int _int(va_list args)
 			l++;
 		}
 		digit = malloc(l * sizeof(int));
-		for (x = 0; x < l; x++)
+		for (m = 0; m < l; m++)
 		{
 			digit[m] = j % 10;
 			j = j / 10;
 		}
-		for (x = (l - 1); x >= 0 ; x--)
+		for (m = (l - 1); m >= 0 ; m--)
 		{
 			putchar(digit[m] + '0');
 			len++;
