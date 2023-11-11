@@ -13,12 +13,8 @@ int _string(va_list args)
 
 	if (s == NULL)
 	{
-		s = "(null)";
-		for (i = 0; s[i]; i++)
-		{
-			write(1, &s[i], 1);
-			len++;
-		}
+		write(1, "(null)", 6);
+		len += 6;
 	} else
 	{
 		for (i = 0; s[i]; i++)
