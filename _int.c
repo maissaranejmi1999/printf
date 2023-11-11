@@ -22,30 +22,32 @@ int _int(va_list args)
 	{
 		write(1, "0", 1);
 		return (1);
-	}
-	j = i;
-	while (j != 0)
+	} else
 	{
-		x = j % 10;
-		j = j / 10;
-		l++;
+		j = i;
+		while (j != 0)
+		{
+			x = j % 10;
+			j = j / 10;
+			l++;
+		}
+		digit = malloc(l * sizeof(int));
+		if (digit == NULL)
+		{
+			return (-1);
+		}
+		for (x = 0; x < l; x++)
+		{
+			digit[x] = i % 10;
+			i = i / 10;
+		}
+		for (x = (l - 1); x >= 0 ; x--)
+		{
+			digitChar = digit[x] + '0';
+			write(1, &digitChar, 1);
+			len++;
+		}
+		free(digit);
 	}
-	digit = malloc(l * sizeof(int));
-	if (digit == NULL)
-	{
-		return (-1);
-	}
-	for (x = 0; x < l; x++)
-	{
-		digit[x] = i % 10;
-		i = i / 10;
-	}
-	for (x = (l - 1); x >= 0 ; x--)
-	{
-		digitChar = digit[x] + '0';
-		write(1, &digitChar, 1);
-		len++;
-	}
-	free(digit);
 	return (len);
 }
