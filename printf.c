@@ -32,6 +32,10 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			p++;
+		} else if (*p == '\n')
+		{
+			newline = '\n';
+			write(1, &newline, 1);
 		} else
 		{
 			write(1,&(*p),1);
