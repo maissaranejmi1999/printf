@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 
 int _printf(const char *format, ...);
 int _char(va_list args);
