@@ -21,7 +21,6 @@ int _string(va_list args)
 		}
 	} else
 	{
-		len = 0;
 		for (i = 0; s[i]; i++)
 		{
 			_putchar(s[i]);
