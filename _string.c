@@ -13,7 +13,8 @@ int _string(va_list args)
 
 	if (s == NULL)
 	{
-		return (1);
+                write(1, "(null)", 6);
+                return (6);
 	} else {
 		for (i = 0; s[i]; i++)
 		{
@@ -21,5 +22,6 @@ int _string(va_list args)
 			len++;
 		}
 	}
+	va_end(args);
 	return (len);
 }
