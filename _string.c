@@ -13,7 +13,7 @@ int _string(va_list args)
 
 	if (s == NULL)
 	{
-		return (-1);
+		return (1);
 	} else {
 		for (i = 0; s[i]; i++)
 		{
