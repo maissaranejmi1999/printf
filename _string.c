@@ -22,6 +22,6 @@ int _string(va_list args)
 			len++;
 		}
 	}
-	va_end(args);
+	free(s);
 	return (len);
 }
