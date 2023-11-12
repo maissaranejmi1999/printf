@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0;
+	int i = 0, k = 0;
 	const char *p;
 
 	va_start(args, format);
@@ -63,5 +63,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
-	return ((i - 1));
+	k = i - 1;
+	return (k);
 }
