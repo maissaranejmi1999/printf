@@ -12,7 +12,7 @@ int _char(va_list args)
 
 	if (c == '\0')
 	{
-		return (-1);
+		return (1);
 	}
 	write(1, &c, 1);
 	return (1);
