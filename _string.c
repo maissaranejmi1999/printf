@@ -16,7 +16,7 @@ int _string(va_list args)
                 write(1, "(null)", 6);
                 return (6);
 	} else {
-		for (i = 0; s[i]; i++)
+		for (i = 0; s[i]!= '\0'; i++)
 		{
 			write(1, &s[i], 1);
 			len++;
