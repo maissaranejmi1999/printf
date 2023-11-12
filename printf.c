@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 		} else
 		{
 			write(1, &(*p), 1);
-			
+			i++;
 		}
 	}
 	va_end(args);
