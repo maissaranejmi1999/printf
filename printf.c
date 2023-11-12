@@ -49,6 +49,10 @@ int _printf(const char *format, ...)
 			{
 				write(1, "\\", 1);
 				i++;
+			} else if (*(p + 1) == 't')
+			{
+				write(1, "\t", 1);
+				i++;
 			} else
 			{
 				va_end(args);
