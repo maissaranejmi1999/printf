@@ -25,16 +25,6 @@ int _printf(const char *format, ...)
 			if (*(p + 1) == '%')
 				i += _putchar('%');
 			p++;
-		} else if (*p == '\\')
-		{
-			if (*(p + 1) == 'n')
-			{
-				i += _puts("\n");
-			} else if (*(p + 1) == '\\')
-			{
-				i += _putchar(*(p + 1));
-			}
-			p++;
 		} else
 			i += _putchar(*p);
 	}
