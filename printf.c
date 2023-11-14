@@ -5,7 +5,6 @@
  * @format: ptr
  * Return: the length of what it prints
 */
-
 int _printf(const char *format, ...)
 {
         va_list args;
@@ -13,10 +12,10 @@ int _printf(const char *format, ...)
         const char *p;
 
         va_start(args, format);
-        if (!format)
-	{
+        if (format == NULL)
+        {
                 return (-1);
-	}
+        }
         for (p = format; *p != '\0'; p++)
         {
                 if (*p == '%')
@@ -33,34 +32,36 @@ int _printf(const char *format, ...)
                         } else if (*(p + 1) == '%')
                         {
                                 write(1, "%", 1);
-                                
+                                i++;
                         } else
                         {
                                 va_end(args);
                                 return (-1);
-                       	}
+                        }
                         p++;
                 } else if (*p == '\\')
                 {
                         if (*(p + 1) == 'n')
                         {
                                 write(1, "\n", 1);
+                                i++;
                         } else if (*(p + 1) == '\\')
                         {
                                 write(1, "\\", 1);
-                               
+                                i++;
                         } else
                         {
-				va_end(args);	
+                                va_end(args);
                                 return (-1);
                         }
                         p++;
                 } else
                 {
                         write(1, &(*p), 1);
-                        
+                        i++;
                 }
         }
         va_end(args);
         return (i);
 }
+
