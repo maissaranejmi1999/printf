@@ -40,14 +40,14 @@ int _printf(const char *format, ...)
                                 return (-1);
                        	}
                         p++;
-                } else if (*p == '\\')
+                } else if (*p == '\')
                 {
                         if (*(p + 1) == 'n')
                         {
                                 write(1, "\n", 1);
-                        } else if (*(p + 1) == '\\')
+                        } else if (*(p + 1) == '\')
                         {
-                                write(1, "\ ", 1);
+                                write(1, "\\", 1);
                                 i++;
                         } else
                         {
