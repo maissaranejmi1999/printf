@@ -26,9 +26,6 @@ int _printf(const char *format, ...)
 			} else if (*(p + 1) == 's')
 			{
 				i += _string(args);
-			} else if ((*(p + 1) == 'd') || (*(p + 1) == 'i'))
-			{
-				i += _int(args);
 			} else if (*(p + 1) == '%')
 			{
 				write(1, "%", 1);
