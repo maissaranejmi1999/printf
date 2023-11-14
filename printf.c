@@ -25,6 +25,7 @@ int pourcentage(const char *p, va_list args, int i)
 		i++;
 	} else
 	{
+		i = -1;
 		va_end(args);
 		return (-1);
 	}
