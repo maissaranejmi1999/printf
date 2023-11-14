@@ -8,10 +8,9 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
-int _puts(char *str);
-/*int _int(va_list args);*/
-/*int _string(va_list args);*/
-/*int _char(va_list args);*/
+int _int(va_list args);
+int _string(va_list args);
+int _char(va_list args);
 int _putchar(char c);
 
 #endif
