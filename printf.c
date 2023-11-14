@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
                         } else if (*(p + 1) == '%')
                         {
                                 write(1, "%", 1);
-                                i++;
+                                
                         } else
                         {
                                 va_end(args);
@@ -48,17 +48,17 @@ int _printf(const char *format, ...)
                         } else if (*(p + 1) == '\\')
                         {
                                 write(1, "\\", 1);
-                                i++;
+                               
                         } else
                         {
-                               
+				va_end(args);	
                                 return (-1);
                         }
                         p++;
                 } else
                 {
                         write(1, &(*p), 1);
-                        i++;
+                        
                 }
         }
         va_end(args);
