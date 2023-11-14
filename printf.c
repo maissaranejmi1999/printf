@@ -8,7 +8,7 @@
  * Return: int
 */
 
-int pourcentage(const char *p, va_list args, int i)
+void pourcentage(const char *p, va_list args, int i)
 {
 	if (*(p + 1) == 'c')
 	{
@@ -23,13 +23,6 @@ int pourcentage(const char *p, va_list args, int i)
 	{
 		write(1, "%", 1);
 		i++;
-	} else
-	{
-		i = -1;
-		va_end(args);
-		return (-1);
-	}
-	return (i);
 }
 
 
@@ -54,7 +47,7 @@ int _printf(const char *format, ...)
 	{
 		if (*p == '%')
 		{
-			i = pourcentage(p, args, i);
+			pourcentage(p, args, i);
 			p++;
 		} else if (*p == '\\')
 		{

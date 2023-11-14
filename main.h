@@ -12,6 +12,6 @@ int _int(va_list args);
 int _string(va_list args);
 int _char(va_list args);
 int _putchar(char c);
-int pourcentage(const char *p, va_list args, int i);
+void pourcentage(const char *p, va_list args, int i);
 
 #endif
