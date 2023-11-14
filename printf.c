@@ -28,17 +28,15 @@ int _printf(const char *format, ...)
 		} else if (*p == '\\')
 		{
 			if (*(p + 1) == 'n')
-				i += write(1, "\n", 1);
-			if (*(p + 1) == '\\')
-				i += write(1, "\\", 1);
-			else
 			{
-				va_end(args);
-				return (-1);
+				i += _puts("\n");
+			} else if (*(p + 1) == '\\')
+			{
+				i += _putchar(*(p + 1));
 			}
 			p++;
 		} else
-			i += write(1, &(*p), 1);
+			i += _putchar(*p);
 	}
 	va_end(args);
 	return (i);
