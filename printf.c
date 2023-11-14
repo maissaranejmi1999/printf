@@ -1,6 +1,38 @@
 #include "main.h"
 
 /**
+ * pourcentage - function
+ * @p: cnst char
+ * @args: list
+ * @i: int
+ * Return: int
+*/
+
+int pourcentage(const char *p, va_list args, int i)
+{
+	if (*(p + 1) == 'c')
+	{
+		i += _char(args);
+	} else if (*(p + 1) == 's')
+	{
+		i += _string(args);
+	} else if ((*(p + 1) == 'd') || (*(p + 1) == 'i'))
+	{
+		i += _int(args);
+	} else if (*(p + 1) == '%')
+	{
+		write(1, "%", 1);
+		i++;
+	} else
+	{
+		va_end(args);
+		return (-1);
+	}
+	return (i);
+}
+
+
+/**
  * _printf - function
  * @format: ptr
  * Return: the length of what it prints
@@ -21,24 +53,7 @@ int _printf(const char *format, ...)
 	{
 		if (*p == '%')
 		{
-			if (*(p + 1) == 'c')
-			{
-				i += _char(args);
-			} else if (*(p + 1) == 's')
-			{
-				i += _string(args);
-			} else if ((*(p + 1) == 'd') || (*(p + 1) == 'i'))
-			{
-				i += _int(args);
-			} else if (*(p + 1) == '%')
-			{
-				write(1, "%", 1);
-				i++;
-			} else
-			{
-				va_end(args);
-				return (-1);
-			}
+			i = pourcentage(p, args, i);
 			p++;
 		} else if (*p == '\\')
 		{
