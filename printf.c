@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
         const char *p;
 
         va_start(args, format);
-        if (!format || format == NULL)
+        if (!format)
 	{
                 return (-1);
 	}
@@ -45,7 +45,6 @@ int _printf(const char *format, ...)
                         if (*(p + 1) == 'n')
                         {
                                 write(1, "\n", 1);
-                                i++;
                         } else if (*(p + 1) == '\\')
                         {
                                 write(1, "\\", 1);
