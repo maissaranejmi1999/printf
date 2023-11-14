@@ -16,52 +16,54 @@ int _printf(const char *format, ...)
         if (!format)
 	{
                 return (-1);
+	} else
+	{
+        	for (p = format; *p != '\0'; p++)
+        	{
+                	if (*p == '%')
+                	{
+                        	if (*(p + 1) == 'c')
+                        	{
+                                	i += _char(args);
+                        	} else if (*(p + 1) == 's')
+                        	{
+                                	i += _string(args);
+                        	} else if ((*(p + 1) == 'd') || (*(p + 1) == 'i'))
+                        	{
+                                	i += _int(args);
+                        	} else if (*(p + 1) == '%')
+                        	{
+                                	write(1, "%", 1);
+                                	i++;
+                        	} else
+                        	{
+                                	va_end(args);
+                                	return (-1);
+                       		}
+                        	p++;
+                	} else if (*p == '\\')
+                	{
+                        	if (*(p + 1) == 'n')
+                        	{
+                                	write(1, "\n", 1);
+                                	i++;
+                        	} else if (*(p + 1) == '\\')
+                        	{
+                                	write(1, "\\", 1);
+                                	i++;
+                        	} else
+                        	{
+                                	va_end(args);
+                                	return (-1);
+                        	}
+                        	p++;
+                	} else
+                	{
+                        	write(1, &(*p), 1);
+                        	i++;
+                	}
+        	}
 	}
-        for (p = format; *p != '\0'; p++)
-        {
-                if (*p == '%')
-                {
-                        if (*(p + 1) == 'c')
-                        {
-                                i += _char(args);
-                        } else if (*(p + 1) == 's')
-                        {
-                                i += _string(args);
-                        } else if ((*(p + 1) == 'd') || (*(p + 1) == 'i'))
-                        {
-                                i += _int(args);
-                        } else if (*(p + 1) == '%')
-                        {
-                                write(1, "%", 1);
-                                i++;
-                        } else
-                        {
-                                va_end(args);
-                                return (-1);
-                        }
-                        p++;
-                } else if (*p == '\\')
-                {
-                        if (*(p + 1) == 'n')
-                        {
-                                write(1, "\n", 1);
-                                i++;
-                        } else if (*(p + 1) == '\\')
-                        {
-                                write(1, "\\", 1);
-                                i++;
-                        } else
-                        {
-                                va_end(args);
-                                return (-1);
-                        }
-                        p++;
-                } else
-                {
-                        write(1, &(*p), 1);
-                        i++;
-                }
-        }
         va_end(args);
         return (i);
 }
