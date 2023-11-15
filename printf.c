@@ -23,12 +23,10 @@ int _printf(const char *format, ...)
 				i += _char(args);
 			} else if (*(p + 1) == 's')
 			{
-				char *str_arg = va_arg(args, char *);
-
-				if (str_arg != NULL)
-					i += _string(args);
-				va_end(args);
-				return (-1);
+				i += _string(args);
+			} else if ((*(p + 1) == 'd') || (*(p + 1) == 'i'))
+			{
+				i += _int(args);
 			} else if (*(p + 1) == '%')
 			{
 				write(1, "%", 1);
