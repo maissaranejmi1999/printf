@@ -13,9 +13,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	for (p = format; *p != '\0'; p++)
 	{
 		if (*p == '%')
@@ -25,7 +23,12 @@ int _printf(const char *format, ...)
 				i += _char(args);
 			} else if (*(p + 1) == 's')
 			{
-				i += _string(args);
+				char *str_arg = va_arg(args, char *);
+
+				if (str_arg != NULL)
+					i += _string(args);
+				va_end(args);
+				return -1;
 			} else if (*(p + 1) == '%')
 			{
 				write(1, "%", 1);
