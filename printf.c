@@ -33,8 +33,8 @@ int _printf(const char *format, ...)
 				i++;
 			} else
 			{
-				va_end(args);
-				return (-1);
+				i += write(1, "%", 1);
+				i += write(1, &(*(p + 1)), 1);
 			}
 			p++;
 		} else
